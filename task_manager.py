@@ -18,7 +18,12 @@ class TaskManager:
         return self.tasks
 
     def complete_task(self, task_id):
-        raise NotImplementedError("complete_task is not implemented yet")
+        """Mark the task with the given ID as completed."""
+        for task in self.tasks:
+            if task["id"] == task_id:
+                task["completed"] = True
+                return task
+        raise ValueError(f"No task found with ID {task_id}.")
 
     def delete_task(self, task_id):
         raise NotImplementedError("delete_task is not implemented yet")
