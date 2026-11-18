@@ -18,6 +18,7 @@ class TaskManager:
         raise NotImplementedError("complete_task is not implemented yet")
 
     def delete_task(self, task_id):
+        """Delete the task with the given ID."""
         for task in self.tasks:
             if task["id"] == task_id:
                 self.tasks.remove(task)
